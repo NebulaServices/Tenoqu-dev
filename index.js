@@ -5,11 +5,8 @@ const dotenv = require('dotenv')
 dotenv.config()
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3000
-app.listen(port, () => {
-    console.log("Tenoqu is running on port "+port+"!")
-    })
-/*fastify.register(require("@fastify/view"), {
+
+fastify.register(require("@fastify/view"), {
     engine: {
       ejs: require("ejs"),
     },
@@ -20,9 +17,9 @@ app.listen(port, () => {
   fastify.get('*', async (request, reply) => {
     return reply.view("/views/"+request.url, { title: "Tenoqu" });
     });
-fastify.listen({port: 3000}, (err, address) => {
+fastify.listen(3000, (err, address) => {
     if (err) throw err
     fastify.log.info(`Tenoqu listening on ${address}`)
     console.log("Tenoqu is running on port "+process.env.PORT+"!")
     })
-    */
+    
