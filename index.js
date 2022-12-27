@@ -17,7 +17,7 @@ fastify.register(require("@fastify/view"), {
   fastify.get('*', async (request, reply) => {
     return reply.view("/views/"+request.url, { title: "Tenoqu" });
     });
-fastify.listen(3000, (err, address) => {
+fastify.listen({port: process.env.PORT, host: '0.0.0.0'}, (err, address) => {
     if (err) throw err
     fastify.log.info(`Tenoqu listening on ${address}`)
     console.log("Tenoqu is running on port "+process.env.PORT+"!")
