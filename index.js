@@ -1,6 +1,20 @@
-const express = require('express');
-const app = express();
-const port = 3000;
-app.set('view engine', 'ejs');
-app.get('/', (req, res) => res.render('index'));
-app.listen(port, () => console.log(`Tenoqu listening on port ${port}!`));
+const fastify = require('fastify')()
+const path = require('path')
+const fs = require('fs')
+const dotenv = require('dotenv')
+dotenv.config()
+fastify.register(require("@fastify/view"), {
+    engine: {
+      ejs: require("ejs"),
+    },
+  });
+  fastify.get('/', async (request, reply) => {
+    return reply.view("/views/index", { title: "Tenoqu" });
+    });
+  fastify.get('*', async (request, reply) => {
+    return reply.view("/views/"+request.url, { title: "Tenoqu" });
+    });
+fastify.listen({port: process.env.PORT}, (err, address) => {
+    if (err) throw err
+    fastify.log.info(`Tenoqu listening on ${address}`)
+    })
