@@ -1,0 +1,27 @@
+{
+  "name": "tenoqu-dev",
+  "version": "1.0.0",
+  "description": "Tenoqu is the chat platform made for developers, by developers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NebulaServices/Tenoqu-dev.git"
+  },
+  "keywords": [
+    "tenoqu",
+    "chat",
+    "devchat"
+  ],
+  "author": "NebulaServices",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/NebulaServices/Tenoqu-dev/issues"
+  },
+  "homepage": "https://github.com/NebulaServices/Tenoqu-dev#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
