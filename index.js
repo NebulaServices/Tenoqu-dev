@@ -3,7 +3,13 @@ const path = require('path')
 const fs = require('fs')
 const dotenv = require('dotenv')
 dotenv.config()
-fastify.register(require("@fastify/view"), {
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+    console.log("Tenoqu is running on port "+port+"!")
+    })
+/*fastify.register(require("@fastify/view"), {
     engine: {
       ejs: require("ejs"),
     },
@@ -19,3 +25,4 @@ fastify.listen({port: 3000}, (err, address) => {
     fastify.log.info(`Tenoqu listening on ${address}`)
     console.log("Tenoqu is running on port "+process.env.PORT+"!")
     })
+    */
