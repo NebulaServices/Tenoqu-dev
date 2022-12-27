@@ -1,10 +1,7 @@
 const fastify = require('fastify')()
 const path = require('path')
-const fs = require('fs')
 const dotenv = require('dotenv')
 dotenv.config()
-const express = require('express')
-const app = express()
 
 fastify.register(require("@fastify/view"), {
     engine: {
