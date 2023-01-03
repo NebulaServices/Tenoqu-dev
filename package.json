@@ -4,7 +4,7 @@
   "description": "Tenoqu is the chat platform made for developers, by developers.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

@@ -1,11 +1,11 @@
 @font-face {
     font-family: Inter;
-    src: url(./res/inter.tff);
+    src: url(/balla/inter.tff);
 }
 
 @font-face {
     font-family: InterB;
-    src: url(./res/Inter-ExtraBold.ttf);
+    src: url(/balla/Inter-ExtraBold.ttf);
 }
 
 [theme="classic"] {
