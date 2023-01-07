@@ -1,16 +1,182 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+[data-theme="dark"] {
+  --main-back-color: #282828;
+  --outers-color: #282828;
+  --outer-top-height: 58px;
+  --dms-server-back-color: #131313;
+  --member-lists-width: 222px;
+  --sever-listings-width: 78px;
+  --server-channels-width: 222px;
+  --home-active-back-color: #3d3d3d;
+  --home-active-hover-back: #ffeaca7c;
+  --data-server-channel-name-etc-height: 58px;
+  --message-input-height: 54px;
+  --message-input-color: #a8a8a8;
+  --channel-dms-name-color: #eeeded;
+  --channel-dms-desc-color: #c4c4c4;
+}
+
+html {
+  background-color: var(--main-back-color);
+  height: 100%;
+  font-family: Inter;
+  font-weight: 400;
+}
+
 body {
-  padding: 0;
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+[data-top-outer] {
+  background-color: var(--main-back-color);
+  height: var(--outer-top-height);
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
-* {
-  box-sizing: border-box;
+[data-logo-text] {
+  position: absolute;
+  height: 40px;
+  width: max-content;
+  left: 8px;
+}
+
+[data-left-outer] {
+  background-color: var(--main-back-color);
+}
+
+[data-server-things] {
+  display: flex;
+  height: calc(100% - var(--outer-top-height));
+  width: 100%;
+}
+
+[data-server-listings] {
+  background-color: var(--main-back-color);
+  height: 100%;
+  width: var(--sever-listings-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+[data-home] {
+  height: 40px;
+  padding: 8px 10px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+  border-radius: 30px;
+}
+
+[data-home][data-h-active] {
+  background-color: var(--home-active-back-color);
+}
+
+[data-h-active]:hover {
+  border-radius: 14px;
+  background-color: var(--home-active-hover-back);
+}
+
+[data-home-logo] {
+  width: 40px;
+  height: 34px;
+}
+
+[data-server-view] {
+  height: calc(100% - 8px);
+  width: calc(100% - (var(--sever-listings-width) + 27px));
+  border-radius: 10px;
+  display: flex;
+  gap: 8px;
+  background-color: var(--dms-server-back-color);
+  padding: 0 9px 0 10px;
+}
+
+[data-channels-lists] {
+  background-color: var(--outers-color);
+  width: var(--server-channels-width);
+  height: calc(100% - 16px);
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+[data-messages-etc] {
+  width: calc(100% - (var(--server-channels-width) + var(--member-lists-width)));
+  height: calc(100% - 16px);
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+[data-server-channel-name-etc] {
+  background-color: var(--outers-color);
+  border-radius: 8px;
+  width: calc(100% - 16px);
+  height: var(--data-server-channel-name-etc-height);
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 8px 0px 8px;
+}
+
+[data-channel-name] {
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--channel-dms-name-color);
+}
+
+[data-channel-desc] {
+  font-weight: 400;
+  color: var(--channel-dms-desc-color);
+}
+
+[data-messages] {
+  background-color: var(--outers-color);
+  height: calc(100% - (var(--message-input-height) + 24px));
+  border-radius: 8px;
+}
+
+[data-input-container] {
+  background-color: var(--outers-color);
+  height: var(--message-input-height);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px 0 8px;
+}
+
+[data-message-input] {
+  color: var(--message-input-color);
+  background-color: transparent;
+  border: none;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  gap: 6px;
+}
+
+[data-message-input]:focus-visible {
+  outline: none;
+  border: none;
+}
+
+[data-member-lists] {
+  background-color: var(--main-back-color);
+  height: calc(100% - 16px);
+  width: var(--member-lists-width);
+  border-radius: 8px;
+  margin-top: 8px;
 }
